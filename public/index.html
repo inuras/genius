@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#333333" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-title" content="Aziz Khalfat">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <title>Aziz Khalfat</title>
   <meta name="description" content="Personal website of Aziz Khalfat, Télécom Paris.">
   <script>
@@ -23,7 +29,7 @@
 <body data-title-key="home.doctitle">
   <header class="masthead">
     <nav class="masthead__inner">
-      <ul class="nav-links">
+      <ul class="nav-links" id="site-nav">
         <li class="nav-home"><a href="index.html" aria-current="page">Aziz Khalfat</a></li>
         <li><a href="genius.html" data-i18n="nav.genius">GENIUS</a></li>
         <li><a href="pinyin.html" data-i18n="nav.pinyin">Pinyin</a></li>
@@ -34,7 +40,7 @@
       </ul>
       <div class="masthead__actions">
         <button class="lang-switch" type="button" aria-label="Passer en français" title="Passer en français">FR</button>
-        <button class="nav-toggle" type="button" aria-label="Menu" data-i18n-aria="nav.menu" aria-expanded="false">☰</button>
+        <button class="nav-toggle" type="button" aria-label="Menu" data-i18n-aria="nav.menu" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path class="i-menu" d="M4 7h16M4 12h16M4 17h16"/><path class="i-close" d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
     </nav>
   </header>

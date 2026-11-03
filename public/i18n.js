@@ -35,7 +35,7 @@ const TRANSLATIONS = {
     "genius.title": "GENIUS",
     "genius.tagline": "Courses and exercises by Aziz Khalfat",
     "genius.heading": "Courses and exercises",
-    "genius.intro": "Click a coloured square to open the document. An empty square means that document is not available yet.",
+    "genius.intro": "Tap or click a coloured square to open the document. An empty square means that document is not available yet.",
     "genius.course": "Course",
     "genius.exercises": "Exercises",
     "genius.solutions": "Solutions",
@@ -51,8 +51,8 @@ const TRANSLATIONS = {
 
     "pinyin.doctitle": "Pinyin · Aziz Khalfat",
     "pinyin.title": "Pinyin chart",
-    "pinyin.intro": "Click a syllable to hear it in all four tones, or choose a tone at the top of the chart. The chart itself is in French.",
-    "pinyin.fullscreen": "Open full screen ↗"
+    "pinyin.intro": "Tap or click a syllable to hear it in all four tones, or choose a tone at the top of the chart. The chart itself is in French.",
+    "pinyin.fullscreen": "Full screen ↗"
   },
   fr: {
     "nav.genius": "GENIUS",
@@ -87,7 +87,7 @@ const TRANSLATIONS = {
     "genius.title": "GENIUS",
     "genius.tagline": "Cours et exercices d'Aziz Khalfat",
     "genius.heading": "Cours et exercices",
-    "genius.intro": "Cliquez sur un carré coloré pour ouvrir le document. Un carré vide signifie que le document n'est pas encore disponible.",
+    "genius.intro": "Touchez ou cliquez sur un carré coloré pour ouvrir le document. Un carré vide signifie que le document n'est pas encore disponible.",
     "genius.course": "Cours",
     "genius.exercises": "Exercices",
     "genius.solutions": "Corrigés",
@@ -103,8 +103,8 @@ const TRANSLATIONS = {
 
     "pinyin.doctitle": "Pinyin · Aziz Khalfat",
     "pinyin.title": "Tableau du pinyin",
-    "pinyin.intro": "Cliquez sur une syllabe pour l'entendre aux quatre tons, ou choisissez un ton en haut du tableau.",
-    "pinyin.fullscreen": "Ouvrir en plein écran ↗"
+    "pinyin.intro": "Touchez ou cliquez sur une syllabe pour l'entendre aux quatre tons, ou choisissez un ton en haut du tableau.",
+    "pinyin.fullscreen": "Plein écran ↗"
   }
 };
 

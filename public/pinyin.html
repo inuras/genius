@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#333333" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-title" content="Aziz Khalfat">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <title>Pinyin · Aziz Khalfat</title>
   <meta name="description" content="Interactive pinyin chart with native audio for every syllable and tone.">
   <script>
@@ -20,10 +26,10 @@
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-title-key="pinyin.doctitle">
+<body class="page-pinyin" data-title-key="pinyin.doctitle">
   <header class="masthead">
     <nav class="masthead__inner">
-      <ul class="nav-links">
+      <ul class="nav-links" id="site-nav">
         <li class="nav-home"><a href="index.html">Aziz Khalfat</a></li>
         <li><a href="genius.html" data-i18n="nav.genius">GENIUS</a></li>
         <li><a href="pinyin.html" aria-current="page" data-i18n="nav.pinyin">Pinyin</a></li>
@@ -34,16 +40,18 @@
       </ul>
       <div class="masthead__actions">
         <button class="lang-switch" type="button" aria-label="Passer en français" title="Passer en français">FR</button>
-        <button class="nav-toggle" type="button" aria-label="Menu" data-i18n-aria="nav.menu" aria-expanded="false">☰</button>
+        <button class="nav-toggle" type="button" aria-label="Menu" data-i18n-aria="nav.menu" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path class="i-menu" d="M4 7h16M4 12h16M4 17h16"/><path class="i-close" d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
     </nav>
   </header>
 
   <div class="layout layout--wide">
     <main class="page page--wide">
-      <h1 class="page__title" data-i18n="pinyin.title">Pinyin chart</h1>
-      <p class="pinyin__intro"><span data-i18n="pinyin.intro">Click a syllable to hear it in all four tones, or choose a tone at the top of the chart. The chart itself is in French.</span>
-        <a href="pinyin-chart.html" target="_blank" rel="noopener" data-i18n="pinyin.fullscreen">Open full screen ↗</a></p>
+      <div class="pinyin__head">
+        <h1 class="page__title" data-i18n="pinyin.title">Pinyin chart</h1>
+        <p class="pinyin__intro"><span class="pinyin__intro-text" data-i18n="pinyin.intro">Tap or click a syllable to hear it in all four tones, or choose a tone at the top of the chart. The chart itself is in French.</span>
+          <a href="pinyin-chart.html" target="_blank" rel="noopener" data-i18n="pinyin.fullscreen">Full screen ↗</a></p>
+      </div>
       <div class="pinyin__frame">
         <iframe src="pinyin-chart.html" title="Tableau du pinyin" loading="lazy"></iframe>
       </div>

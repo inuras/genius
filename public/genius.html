@@ -18,9 +18,12 @@
       }
     })();
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-title-key="genius.doctitle">
+<body class="page-genius" data-title-key="genius.doctitle">
   <header class="masthead">
     <nav class="masthead__inner">
       <ul class="nav-links">
@@ -39,22 +42,14 @@
     </nav>
   </header>
 
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="avatar" aria-hidden="true">AK</div>
-      <h3 class="author__name">Aziz Khalfat</h3>
-      <p class="author__bio" data-i18n="side.bio">Student at Télécom Paris. Write a short bio here: your field, what you work on, and what you're interested in.</p>
-      <button class="follow-btn" type="button" aria-expanded="false" data-i18n="side.follow">Follow</button>
-      <ul class="author__urls">
-        <li><span class="icon">📍</span>Paris, France</li>
-        <li><span class="icon">🏛️</span>Télécom Paris</li>
-        <li><a href="mailto:aziz.khalfat@telecom-paris.fr"><span class="icon">✉️</span><span data-i18n="side.email">Email</span></a></li>
-        <li><a href="https://github.com/" target="_blank" rel="noopener"><span class="icon">💻</span>GitHub</a></li>
-      </ul>
-    </aside>
+  <div class="banner">
+    <p class="banner__title">GENIUS</p>
+    <p class="banner__tagline" data-i18n="genius.tagline">Courses and exercises</p>
+  </div>
 
-    <main class="page">
-      <h1 class="page__title" data-i18n="genius.title">GENIUS</h1>
+  <div class="layout layout--wide genius">
+    <main class="page page--wide">
+      <h1 class="entry-title" data-i18n="genius.heading">Courses and exercises</h1>
 
       <section class="page__content">
         <p class="legend">
@@ -72,6 +67,10 @@
           <li class="chap">
             <span class="chap__docs"><a class="sq sq--course" href="files/syllabus.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.course" aria-label="Course"></a><span class="sq sq--empty" aria-hidden="true"></span><span class="sq sq--empty" aria-hidden="true"></span></span>
             <span class="chap__name"><strong data-i18n="genius.syllabus">Syllabus</strong></span>
+          </li>
+          <li class="chap">
+            <span class="chap__docs"><a class="sq sq--course" href="https://christophebertault.fr/documents/coursetexercices/Cours%20-%20Raisonner,%20rediger.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.course" aria-label="Course"></a><span class="sq sq--empty" aria-hidden="true"></span><span class="sq sq--empty" aria-hidden="true"></span></span>
+            <span class="chap__name"><strong><span data-i18n="genius.transversal">Cross-cutting chapter</span> – <span class="chap__title" data-i18n="genius.reasoning">Reasoning and writing proofs</span></strong> <small class="chap__credit">(C. Bertault)</small></span>
           </li>
           <li class="chap">
             <span class="chap__docs"><a class="sq sq--course" href="files/cours-1.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.course" aria-label="Course"></a><a class="sq sq--exercises" href="files/exercices-1.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.exercises" aria-label="Exercises"></a><a class="sq sq--solutions" href="files/corriges-1.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.solutions" aria-label="Solutions"></a></span>

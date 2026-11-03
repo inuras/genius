@@ -152,6 +152,7 @@ a.sq:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 }
 .chap__docs { display: inline-flex; gap: 1.1em; flex: none; transform: translateY(2px); }
 .chap__title { color: var(--chap-title); }
+.chap__credit { color: var(--text-light); }
 
 /* ---------- Pinyin page ---------- */
 .layout--wide { grid-template-columns: minmax(0, 1fr); }
@@ -163,6 +164,39 @@ a.sq:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
   height: calc(100vh - var(--masthead-h) - 12em); min-height: 520px;
 }
 .pinyin__frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+/* ---------- GENIUS page: classic course-site look ---------- */
+.page-genius { font-family: "Lato", -apple-system, "Segoe UI", Arial, sans-serif; }
+.page-genius .layout { padding-top: 2.5em; }
+.banner {
+  margin-top: var(--masthead-h);
+  padding: 56px 16px;
+  text-align: center; color: #fff;
+  background: linear-gradient(135deg, #24324a 0%, #476b98 55%, #6f8fb8 100%);
+  animation: intro .3s .15s both;
+}
+.banner__title {
+  margin: 0; font-size: clamp(2.2rem, 7vw, 3rem); font-weight: 900;
+  letter-spacing: .12em; line-height: 1.3;
+}
+.banner__tagline { margin: 10px 0 0; font-size: clamp(1.05rem, 3.5vw, 1.4rem); font-weight: 400; }
+.banner__tagline::before {
+  content: ""; display: block; width: 170px; max-width: 50%; height: 2px;
+  margin: 0 auto 12px; background: #fff;
+}
+.genius .page { max-width: 900px; margin: 0 auto; width: 100%; }
+.genius .entry-title {
+  margin: 10px auto 1.2em; text-align: center;
+  font-size: clamp(1.7rem, 5vw, 2.2rem); font-weight: 900; letter-spacing: 1px;
+  color: var(--text);
+}
+.genius .page__content { font-size: 15px; line-height: 28px; }
+.genius .page__content p { text-align: left; margin: 0 0 1.5em; }
+.genius .legend { margin-bottom: 2em; }
+.genius .chap { padding: .3em 0; }
+.genius .chap strong { font-weight: 700; }
+.page-genius .page__footer { background: #1c1f27; color: #888; border-top: 0; text-align: center; }
+.page-genius .page__footer a { color: #fff; }
 
 @keyframes intro { from { opacity: 0; } to { opacity: 1; } }
 

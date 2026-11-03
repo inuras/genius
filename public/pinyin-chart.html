@@ -218,6 +218,89 @@ td button:active:not(.no) { background: var(--hover); }
   .exb { display: block; text-align: left; }
   .exb .h { white-space: nowrap; }
 }
+
+/* ---------- Phone view (replaces the big table on narrow screens) ---------- */
+.mobile { display: none; }
+@media (max-width: 560px) {
+  .chartwrap { display: none; }
+  .mobile { display: flex; flex-direction: column; flex: 1; min-height: 0; background: var(--bg); }
+  .mhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 16px 6px; }
+  .mby button { padding: 5px 12px; font-size: 13px; min-height: 34px; }
+  .mcount { font-size: 12px; color: var(--muted); }
+  .mpick {
+    position: relative; display: flex; align-items: center; gap: 6px;
+    overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    padding: 2px 16px 10px; border-bottom: 1px solid var(--line);
+  }
+  .mpick::-webkit-scrollbar { display: none; }
+  .mgroup {
+    flex: none; padding: 0 0 0 8px; color: var(--muted);
+    font: 600 10px var(--f-ui); letter-spacing: .08em; text-transform: uppercase;
+  }
+  .mgroup:first-child { padding-left: 0; }
+  .mgroup.lc { text-transform: none; font-size: 13px; letter-spacing: 0; }
+  .chip {
+    flex: none; min-width: 44px; height: 40px; padding: 0 12px; border-radius: 20px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    font: 600 16px var(--f-ui); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  }
+  .chip small { font-weight: 400; font-size: 11px; color: var(--muted); }
+  .chip[aria-pressed="true"] { background: var(--sel); color: var(--sel-ink); border-color: var(--sel); }
+  .chip[aria-pressed="true"] small { color: inherit; opacity: .75; }
+  .mgrid {
+    flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 8px;
+    padding: 12px 16px; align-content: start;
+  }
+  .mgrid button {
+    min-height: 50px; padding: 0 4px; border-radius: 12px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    font: 500 18px var(--f-ui);
+  }
+  .mgrid button.t1 { color: var(--t1); } .mgrid button.t2 { color: var(--t2); }
+  .mgrid button.t3 { color: var(--t3); } .mgrid button.t4 { color: var(--t4); }
+  .mgrid button.no { color: var(--faint); border-style: dashed; }
+  .mgrid button.on { background: var(--sel); color: var(--sel-ink); border-color: var(--sel); }
+  .mgrid button.flash { animation: flash .6s ease-out; }
+  .mgrid button:active:not(.no) { transform: scale(.96); }
+}
+@media (max-width: 560px) and (prefers-reduced-motion: reduce) { .mgrid button.flash { animation: none; } }
+
+/* Full-screen button: only inside the website page on small screens (the page hides its own title there). */
+.fs { display: none; }
+@media (max-width: 560px), (max-height: 500px) {
+  .embedded .fs {
+    display: inline-flex; align-items: center; justify-content: center; flex: none;
+    width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px;
+    background: var(--bg); color: var(--ink);
+  }
+}
+/* Phones: compact player bar, only the syllable list shrinks. */
+@media (max-width: 560px) {
+  .top, .mhead, .mpick, .player { flex-shrink: 0; }
+  .top { padding-block: 6px; }
+  .seg button { padding: 8px 7px; gap: 4px; }
+  .mhead { padding: 6px 16px 4px; }
+  .mpick { padding-bottom: 8px; }
+  .chip { height: 38px; }
+  .player { display: flex; flex-direction: column; gap: 6px; padding-block: 8px max(8px, env(safe-area-inset-bottom, 0px)); }
+  .big { display: none; }
+  .tonebtns { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) auto; gap: 5px; }
+  .tb { justify-content: center; min-height: 40px; padding: 4px; font-size: 15px; overflow: hidden; white-space: nowrap; }
+  .tb.all { font-size: 13px; padding: 4px 8px; }
+  .info { gap: 6px; }
+  .tip {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+    cursor: pointer; line-height: 1.35;
+  }
+  .tip.open { display: block; }
+  .mgrid .credit { grid-column: 1 / -1; margin: 6px 0 0; font-size: 11px; color: var(--muted); }
+}
+@media (max-width: 340px) {
+  .tools .seg { order: 1; } .embedded .fs { order: 2; } .tools .search { order: 3; flex-basis: 100%; }
+  .tb svg { display: none; }
+  .tb { font-size: 13px; }
+}
 </style>
 
 <header class="top">
@@ -233,9 +316,23 @@ td button:active:not(.no) { background: var(--hover); }
     <form class="search" id="searchForm" autocomplete="off">
       <input id="q" type="search" placeholder="Chercher" aria-label="Chercher une syllabe" enterkeyhint="go">
     </form>
+    <a class="fs" href="pinyin-chart.html" target="_top" aria-label="Plein écran" title="Plein écran"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <div class="legend" id="legend"></div>
   </div>
 </header>
+
+<!-- Phone view: choose an initial (or a final), then tap big syllable buttons. -->
+<div class="mobile" id="mobile">
+  <div class="mhead">
+    <div class="seg mby" id="mBy" role="group" aria-label="Choisir les syllabes par">
+      <button type="button" data-by="i" aria-pressed="true">Initiales</button>
+      <button type="button" data-by="f" aria-pressed="false">Finales</button>
+    </div>
+    <span class="mcount" id="mcount"></span>
+  </div>
+  <div class="mpick" id="mpick" role="group" aria-label="Choix"></div>
+  <div class="mgrid" id="mgrid" aria-label="Syllabes"></div>
+</div>
 
 <div class="chartwrap" id="wrap">
   <table id="chart" aria-label="Tableau des syllabes du mandarin"></table>
@@ -330,13 +427,14 @@ function buildChart() {
   table.innerHTML = h + "</tbody>";
 }
 function paintChart() {
-  table.querySelectorAll("button[data-k]").forEach(b => {
+  const curW = current && DATA.cells[current] ? DATA.cells[current].w : null;
+  document.querySelectorAll("button[data-k]").forEach(b => {
     const c = DATA.cells[b.dataset.k];
     b.className = "";
     if (mode === 0) { b.textContent = c.w; }
     else if (c.m[mode]) { b.textContent = c.m[mode]; b.classList.add("t" + mode); }
     else { b.textContent = c.w; b.classList.add("no"); }
-    if (b.dataset.k === current) b.classList.add("on");
+    if (c.w === curW) b.classList.add("on");
   });
 }
 
@@ -380,6 +478,8 @@ table.addEventListener("click", e => {
   select(b.dataset.k, true);
 });
 document.getElementById("info").addEventListener("click", e => {
+  const tip = e.target.closest(".tip");
+  if (tip && phoneMQ.matches) { tip.classList.toggle("open"); return; }
   const b = e.target.closest("button[data-a]");
   if (!b) return;
   playToken++; markPlaying(null); playOne(b.dataset.a);
@@ -417,6 +517,7 @@ function find(q) {
 }
 const qInput = document.getElementById("q");
 function reveal(key) {
+  if (phoneMQ.matches) return revealMobile(key);
   const b = table.querySelector(`button[data-k="${CSS.escape(key)}"]`);
   if (!b) return;
   // Scroll only the chart's own scroll area: scrollIntoView would also scroll the page
@@ -442,6 +543,103 @@ document.getElementById("searchForm").addEventListener("submit", e => {
   else { qInput.setCustomValidity("Cette syllabe n'existe pas en mandarin"); qInput.reportValidity(); }
 });
 
+// ---------- phone view ----------
+// On narrow screens the big table is replaced by: pick an initial (or a final), then big buttons.
+const phoneMQ = matchMedia("(max-width: 560px)");
+const mview = { by: "i", pick: null };
+try {
+  const v = JSON.parse(localStorage.getItem("pinyin-mview") || "null");
+  if (v && (v.by === "i" || v.by === "f") && typeof v.pick === "string") { mview.by = v.by; mview.pick = v.pick; }
+} catch (err) {}
+const mpick = document.getElementById("mpick"), mgrid = document.getElementById("mgrid");
+
+function pickFor(key) { const [i, f] = key.split("|"); return mview.by === "i" ? i : f; }
+function pickValid() {
+  return mview.by === "i" ? DATA.initials.includes(mview.pick) : DATA.finals.some(f => f.key === mview.pick);
+}
+function mobileKeys() {
+  const seen = new Set(), out = [];
+  const add = k => { const c = DATA.cells[k]; if (c && !seen.has(c.w)) { seen.add(c.w); out.push(k); } };
+  if (mview.by === "i") DATA.finals.forEach(f => add(mview.pick + "|" + f.key));
+  else DATA.initials.forEach(i => add(i + "|" + mview.pick));
+  return out;
+}
+function buildPicker() {
+  const chip = (v, label) =>
+    `<button type="button" class="chip" data-pick="${v}" aria-pressed="${v === mview.pick}">${label}</button>`;
+  let h = "";
+  if (mview.by === "i") {
+    for (const g of DATA.groups) {
+      h += `<span class="mgroup">${g.label}</span>`;
+      for (let ci = g.start; ci < g.start + g.span; ci++) h += chip(DATA.initials[ci], DATA.initials[ci] || "∅");
+    }
+  } else {
+    for (const f of DATA.finals) {
+      if (DATA.finalGroupStarts.includes(f.key)) h += `<span class="mgroup lc">${f.key}…</span>`;
+      h += chip(f.key, f.key === "-i" ? `-i<small>${f.note}</small>` : f.label);
+    }
+  }
+  mpick.innerHTML = h;
+  document.querySelectorAll("#mBy button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.by === mview.by)));
+}
+const credit = document.querySelector("details.credit");
+function placeCredit() {
+  const home = phoneMQ.matches ? mgrid : document.getElementById("player");
+  if (credit.parentNode !== home) home.appendChild(credit);
+}
+function buildMGrid() {
+  const keys = mobileKeys();
+  mgrid.innerHTML = keys.map(k => `<button type="button" data-k="${k}">${DATA.cells[k].w}</button>`).join("");
+  placeCredit();
+  document.getElementById("mcount").textContent = keys.length + " syllabe" + (keys.length > 1 ? "s" : "");
+  paintChart();
+}
+function scrollChip() {
+  const b = mpick.querySelector('.chip[aria-pressed="true"]');
+  if (b) mpick.scrollTo({ left: Math.max(0, b.offsetLeft - (mpick.clientWidth - b.offsetWidth) / 2) });
+}
+function setPick(v, save = true) {
+  mview.pick = v;
+  mpick.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.pick === v)));
+  buildMGrid();
+  scrollChip();
+  mgrid.scrollTop = 0;
+  if (save) { try { localStorage.setItem("pinyin-mview", JSON.stringify(mview)); } catch (err) {} }
+}
+function revealMobile(key) {
+  const want = pickFor(key);
+  if (want !== mview.pick) setPick(want);
+  const w = DATA.cells[key].w;
+  const b = [...mgrid.querySelectorAll("button[data-k]")].find(x => DATA.cells[x.dataset.k].w === w);
+  if (!b) return;
+  mgrid.scrollTo({ top: Math.max(0, b.offsetTop - (mgrid.clientHeight - b.offsetHeight) / 2) });
+  b.classList.remove("flash"); void b.offsetWidth; b.classList.add("flash");
+}
+mpick.addEventListener("click", e => {
+  const b = e.target.closest(".chip");
+  if (b && b.dataset.pick !== mview.pick) setPick(b.dataset.pick);
+});
+document.getElementById("mBy").addEventListener("click", e => {
+  const b = e.target.closest("button[data-by]");
+  if (!b || b.dataset.by === mview.by) return;
+  mview.by = b.dataset.by;
+  buildPicker();
+  setPick(pickFor(current));   // stay on the syllable you were looking at
+});
+mgrid.addEventListener("click", e => {
+  const b = e.target.closest("button[data-k]");
+  if (!b) return;
+  const c = DATA.cells[b.dataset.k];
+  if (mode && !c.m[mode]) { select(b.dataset.k, false); return; }
+  select(b.dataset.k, true);
+});
+phoneMQ.addEventListener("change", e => { placeCredit(); if (e.matches) scrollChip(); });
+function initMobile() {
+  if (!pickValid()) mview.pick = pickFor(current);
+  buildPicker();
+  setPick(mview.pick, false);
+}
+
 // ---------- legend ----------
 document.getElementById("legend").innerHTML = [1, 2, 3, 4]
   .map(t => `<span style="color:var(--t${t})">${glyph(t)}<b>${t}</b>&nbsp;${CHAO[t]}</span>`).join("");
@@ -454,6 +652,7 @@ try { const m = +localStorage.getItem("pinyin-mode"); if (m >= 0 && m <= 4) mode
 document.querySelectorAll("#toneSeg button").forEach(x => x.setAttribute("aria-pressed", +x.dataset.tone === mode ? "true" : "false"));
 buildChart();
 select("m|a", false);
+initMobile();
 </script>
 
 </body></html>

@@ -322,3 +322,15 @@ body.nav-open .nav-toggle .i-close { display: inline; }
   .page-pinyin .pinyin__frame { flex: 1; min-height: 0; height: auto; }
   .page-pinyin .page__footer { display: none; }
 }
+
+/* Pinyin page on narrow phones / landscape: the chart takes the whole space under the top bar.
+   The title stays for screen readers; the chart has its own full-screen button there. */
+@media (max-width: 560px), (max-height: 500px) {
+  .page-pinyin .pinyin__head {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+}
+@media (max-width: 560px) {
+  .page-pinyin .layout { padding: var(--masthead-h) 0 0; }
+  .page-pinyin .pinyin__frame { border: 0; border-radius: 0; }
+}

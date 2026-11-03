@@ -129,6 +129,8 @@ function applyLang(lang) {
     btn.setAttribute("aria-label", dict["lang.switch"]);
     btn.title = dict["lang.switch"];
   }
+
+  document.documentElement.classList.remove("i18n-pending");
 }
 
 function setLang(lang) {

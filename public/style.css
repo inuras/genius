@@ -26,6 +26,8 @@
 }
 
 * { box-sizing: border-box; }
+/* Hidden for a moment while French text is applied (see the script in <head>). */
+html.i18n-pending body { visibility: hidden; }
 html { font-size: 16px; scroll-padding-top: calc(var(--masthead-h) + 16px); }
 @media (min-width: 48em) { html { font-size: 17px; } }
 @media (min-width: 80em) { html { font-size: 18px; } }

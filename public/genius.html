@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GENIUS · Aziz Khalfat</title>
   <meta name="description" content="Lectures by Aziz Khalfat.">
+  <script>
+    // Pick the language before the page is drawn, so French visitors don't see English first.
+    (function () {
+      var l; try { l = localStorage.getItem("site-lang"); } catch (e) {}
+      if (l !== "en" && l !== "fr") l = (navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en";
+      document.documentElement.lang = l;
+      if (l === "fr") {
+        document.documentElement.classList.add("i18n-pending");
+        // Safety net: never keep the page hidden if i18n.js fails to load.
+        setTimeout(function () { document.documentElement.classList.remove("i18n-pending"); }, 1500);
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-title-key="genius.doctitle">

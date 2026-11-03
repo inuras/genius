@@ -50,9 +50,14 @@ class Handler(SimpleHTTPRequestHandler):
             return
         super().do_GET()
 
+    def send_response(self, code, message=None):
+        self._status = code
+        super().send_response(code, message)
+
     def end_headers(self):
-        ext = os.path.splitext(self.path.split("?", 1)[0])[1].lower()
-        if ext in LONG_CACHE:
+        # self.path is missing on malformed requests, so fall back to "".
+        ext = os.path.splitext(getattr(self, "path", "").split("?", 1)[0])[1].lower()
+        if ext in LONG_CACHE and getattr(self, "_status", 200) < 400:
             self.send_header("Cache-Control", "public, max-age=604800")
         else:
             # Always check for a newer version (cheap: unchanged files answer "304 Not Modified").

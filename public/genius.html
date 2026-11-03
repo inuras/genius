@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GENIUS · Aziz Khalfat</title>
+  <meta name="description" content="Lectures by Aziz Khalfat.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-title-key="genius.doctitle">
+  <header class="masthead">
+    <nav class="masthead__inner">
+      <ul class="nav-links">
+        <li class="nav-home"><a href="index.html">Aziz Khalfat</a></li>
+        <li><a href="genius.html" aria-current="page" data-i18n="nav.genius">GENIUS</a></li>
+        <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="index.html#teaching" data-i18n="nav.teaching">Teaching</a></li>
+        <li><a href="index.html#resources" data-i18n="nav.resources">Resources</a></li>
+        <li><a href="index.html#cv" data-i18n="nav.cv">CV</a></li>
+      </ul>
+      <div class="masthead__actions">
+        <button class="lang-switch" type="button" aria-label="Passer en français" title="Passer en français">FR</button>
+        <button class="nav-toggle" type="button" aria-label="Menu" data-i18n-aria="nav.menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="avatar" aria-hidden="true">AK</div>
+      <h3 class="author__name">Aziz Khalfat</h3>
+      <p class="author__bio" data-i18n="side.bio">Student at Télécom Paris. Write a short bio here: your field, what you work on, and what you're interested in.</p>
+      <button class="follow-btn" type="button" aria-expanded="false" data-i18n="side.follow">Follow</button>
+      <ul class="author__urls">
+        <li><span class="icon">📍</span>Paris, France</li>
+        <li><span class="icon">🏛️</span>Télécom Paris</li>
+        <li><a href="mailto:aziz.khalfat@telecom-paris.fr"><span class="icon">✉️</span><span data-i18n="side.email">Email</span></a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener"><span class="icon">💻</span>GitHub</a></li>
+      </ul>
+    </aside>
+
+    <main class="page">
+      <h1 class="page__title" data-i18n="genius.title">GENIUS</h1>
+
+      <section class="page__content">
+        <p data-i18n="genius.intro">My lectures. Each one has its slides, notes, and a video when available.</p>
+
+        <!-- One <article class="lecture"> per lecture. Put files in public/files/ and update the links.
+             Add the matching text keys (genius.l4.*) in i18n.js for both languages. -->
+        <div class="lectures">
+          <article class="lecture">
+            <p class="lecture__date" data-i18n="genius.l1.date">Lecture 1 · January 2026</p>
+            <h2 class="lecture__title" data-i18n="genius.l1.title">Title of the first lecture</h2>
+            <p class="lecture__desc" data-i18n="genius.l1.desc">A short summary of what this lecture covers and who it is for.</p>
+            <p class="lecture__links">
+              <a href="files/lecture1-slides.pdf" data-i18n="genius.slides">Slides</a>
+              <a href="files/lecture1-notes.pdf" data-i18n="genius.notes">Notes</a>
+              <a href="#" data-i18n="genius.video">Video</a>
+            </p>
+          </article>
+
+          <article class="lecture">
+            <p class="lecture__date" data-i18n="genius.l2.date">Lecture 2 · February 2026</p>
+            <h2 class="lecture__title" data-i18n="genius.l2.title">Title of the second lecture</h2>
+            <p class="lecture__desc" data-i18n="genius.l2.desc">A short summary of what this lecture covers and who it is for.</p>
+            <p class="lecture__links">
+              <a href="files/lecture2-slides.pdf" data-i18n="genius.slides">Slides</a>
+              <a href="files/lecture2-notes.pdf" data-i18n="genius.notes">Notes</a>
+              <a href="#" data-i18n="genius.video">Video</a>
+            </p>
+          </article>
+
+          <article class="lecture">
+            <p class="lecture__date" data-i18n="genius.l3.date">Lecture 3 · March 2026</p>
+            <h2 class="lecture__title" data-i18n="genius.l3.title">Title of the third lecture</h2>
+            <p class="lecture__desc" data-i18n="genius.l3.desc">A short summary of what this lecture covers and who it is for.</p>
+            <p class="lecture__links">
+              <a href="files/lecture3-slides.pdf" data-i18n="genius.slides">Slides</a>
+              <a href="files/lecture3-notes.pdf" data-i18n="genius.notes">Notes</a>
+              <a href="#" data-i18n="genius.video">Video</a>
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="page__footer">
+    <div class="footer__inner">
+      <p><strong data-i18n="footer.follow">Follow me</strong> · <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> · <a href="mailto:aziz.khalfat@telecom-paris.fr" data-i18n="side.email">Email</a></p>
+      <p class="copyright">© <span id="year"></span> Aziz Khalfat</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -62,6 +62,15 @@ code { background: var(--code-bg); padding: .1em .3em; border-radius: 3px; font-
 .nav-links a { color: var(--text); font-size: .95em; display: block; padding: .5em 0; }
 .nav-links a:hover { color: var(--link-hover); text-decoration: none; }
 .nav-home a { font-weight: 700; font-size: 1.15em; padding-right: 1em; }
+.nav-links li:not(.nav-home) a[aria-current="page"] { color: var(--link-hover); font-weight: 600; }
+.masthead__actions { margin-left: auto; display: flex; align-items: center; gap: .5em; }
+.lang-switch {
+  font: inherit; font-size: .8em; font-weight: 600; letter-spacing: .05em;
+  color: var(--text); background: none;
+  border: 1px solid var(--border-dark); border-radius: 4px;
+  padding: .3em .7em; cursor: pointer;
+}
+.lang-switch:hover { color: var(--link-hover); border-color: var(--link-hover); }
 .nav-toggle { display: none; }
 
 /* ---------- Layout ---------- */
@@ -114,6 +123,19 @@ code { background: var(--code-bg); padding: .1em .3em; border-radius: 3px; font-
 .footer__inner { max-width: 1280px; margin: 0 auto; padding: 1.5em 16px; }
 .footer__inner p { margin: .4em 0; }
 
+/* ---------- Lectures (GENIUS page) ---------- */
+.lectures { display: grid; gap: 1.25em; margin-top: 1.5em; }
+.lecture {
+  border: 1px solid var(--border-dark); border-radius: 6px;
+  padding: 1.1em 1.3em; background: var(--bg);
+  transition: border-color .15s ease-in-out;
+}
+.lecture:hover { border-color: var(--link); }
+.lecture__date { margin: 0; font-size: .8em; color: var(--text-light); text-transform: uppercase; letter-spacing: .05em; }
+.page__content .lecture__title { margin: .3em 0 .4em; padding: 0; border: 0; font-size: 1.25em; }
+.page__content .lecture__desc { margin: 0 0 .7em; text-align: left; }
+.lecture__links { margin: 0; display: flex; flex-wrap: wrap; gap: .4em 1.2em; font-size: .9em; }
+
 @keyframes intro { from { opacity: 0; } to { opacity: 1; } }
 
 /* ---------- Small screens ---------- */
@@ -132,11 +154,13 @@ code { background: var(--code-bg); padding: .1em .3em; border-radius: 3px; font-
   .page__content p, .page__content li { text-align: left; }
 
   .masthead__inner { position: relative; }
+  .masthead__actions { position: absolute; right: 16px; top: 0; height: var(--masthead-h); }
   .nav-toggle {
-    display: block; position: absolute; right: 16px; top: calc((var(--masthead-h) - 2.2em) / 2);
-    height: 2.2em; background: none; border: 0; color: var(--text); font-size: 1.3em; cursor: pointer;
+    display: block; height: 2.2em; background: none; border: 0;
+    color: var(--text); font-size: 1.3em; cursor: pointer;
   }
+  .nav-links { padding-right: 6.5em; }
   .nav-links li:not(.nav-home) { display: none; }
-  body.nav-open .nav-links { flex-direction: column; align-items: flex-start; padding: .9em 0 .5em; }
+  body.nav-open .nav-links { flex-direction: column; align-items: flex-start; padding: .9em 6.5em .5em 0; }
   body.nav-open .nav-links li { display: block; }
 }

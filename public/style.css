@@ -125,18 +125,44 @@ code { background: var(--code-bg); padding: .1em .3em; border-radius: 3px; font-
 .footer__inner { max-width: 1280px; margin: 0 auto; padding: 1.5em 16px; }
 .footer__inner p { margin: .4em 0; }
 
-/* ---------- Lectures (GENIUS page) ---------- */
-.lectures { display: grid; gap: 1.25em; margin-top: 1.5em; }
-.lecture {
-  border: 1px solid var(--border-dark); border-radius: 6px;
-  padding: 1.1em 1.3em; background: var(--bg);
-  transition: border-color .15s ease-in-out;
+/* ---------- GENIUS page: chapter list with document squares ---------- */
+:root { --sq-course: #2f6db5; --sq-exercises: #222; --sq-solutions: #2e9a4b; --chap-title: #476b98; }
+@media (prefers-color-scheme: dark) {
+  :root { --sq-course: #6aa6ef; --sq-exercises: #e6e6e6; --sq-solutions: #5fcf7e; --chap-title: #8fb2de; }
 }
-.lecture:hover { border-color: var(--link); }
-.lecture__date { margin: 0; font-size: .8em; color: var(--text-light); text-transform: uppercase; letter-spacing: .05em; }
-.page__content .lecture__title { margin: .3em 0 .4em; padding: 0; border: 0; font-size: 1.25em; }
-.page__content .lecture__desc { margin: 0 0 .7em; text-align: left; }
-.lecture__links { margin: 0; display: flex; flex-wrap: wrap; gap: .4em 1.2em; font-size: .9em; }
+.sq {
+  display: inline-block; width: 15px; height: 15px; flex: none;
+  vertical-align: middle; border: 1.5px solid transparent;
+}
+.sq--course { background: var(--sq-course); }
+.sq--exercises { background: var(--sq-exercises); }
+.sq--solutions { background: var(--sq-solutions); }
+.sq--empty { border-color: var(--border-dark); background: transparent; }
+a.sq { transition: transform .12s ease-in-out, box-shadow .12s ease-in-out; }
+a.sq:hover { transform: scale(1.25); box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px currentColor; text-decoration: none; }
+a.sq:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+
+.legend { display: flex; justify-content: center; flex-wrap: wrap; gap: .6em 2.5em; margin: 0 0 1.5em; }
+.legend > span { display: inline-flex; align-items: center; gap: .6em; }
+
+.chapters { list-style: none; padding: 0; margin: 1.5em 0 0; }
+.page__content .chap {
+  display: flex; align-items: baseline; gap: 1.4em;
+  padding: .45em 0; margin: 0; text-align: left;
+}
+.chap__docs { display: inline-flex; gap: 1.1em; flex: none; transform: translateY(2px); }
+.chap__title { color: var(--chap-title); }
+
+/* ---------- Pinyin page ---------- */
+.layout--wide { grid-template-columns: minmax(0, 1fr); }
+.page--wide { max-width: none; }
+.pinyin__intro { margin: 0 0 1em; }
+.pinyin__intro a { margin-left: .5em; white-space: nowrap; }
+.pinyin__frame {
+  border: 1px solid var(--border-dark); border-radius: 6px; overflow: hidden;
+  height: calc(100vh - var(--masthead-h) - 12em); min-height: 520px;
+}
+.pinyin__frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 
 @keyframes intro { from { opacity: 0; } to { opacity: 1; } }
 

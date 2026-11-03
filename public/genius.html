@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GENIUS · Aziz Khalfat</title>
-  <meta name="description" content="Lectures by Aziz Khalfat.">
+  <meta name="description" content="Lectures by Aziz Khalfat: courses, exercises and solutions.">
   <script>
     // Pick the language before the page is drawn, so French visitors don't see English first.
     (function () {
@@ -26,6 +26,7 @@
       <ul class="nav-links">
         <li class="nav-home"><a href="index.html">Aziz Khalfat</a></li>
         <li><a href="genius.html" aria-current="page" data-i18n="nav.genius">GENIUS</a></li>
+        <li><a href="pinyin.html" data-i18n="nav.pinyin">Pinyin</a></li>
         <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
         <li><a href="index.html#teaching" data-i18n="nav.teaching">Teaching</a></li>
         <li><a href="index.html#resources" data-i18n="nav.resources">Resources</a></li>
@@ -56,44 +57,43 @@
       <h1 class="page__title" data-i18n="genius.title">GENIUS</h1>
 
       <section class="page__content">
-        <p data-i18n="genius.intro">My lectures. Each one has its slides, notes, and a video when available.</p>
+        <p class="legend">
+          <span><span class="sq sq--course" aria-hidden="true"></span><strong data-i18n="genius.course">Course</strong></span>
+          <span><span class="sq sq--exercises" aria-hidden="true"></span><strong data-i18n="genius.exercises">Exercises</strong></span>
+          <span><span class="sq sq--solutions" aria-hidden="true"></span><strong data-i18n="genius.solutions">Solutions</strong></span>
+        </p>
 
-        <!-- One <article class="lecture"> per lecture. Put files in public/files/ and update the links.
-             Add the matching text keys (genius.l4.*) in i18n.js for both languages. -->
-        <div class="lectures">
-          <article class="lecture">
-            <p class="lecture__date" data-i18n="genius.l1.date">Lecture 1 · January 2026</p>
-            <h2 class="lecture__title" data-i18n="genius.l1.title">Title of the first lecture</h2>
-            <p class="lecture__desc" data-i18n="genius.l1.desc">A short summary of what this lecture covers and who it is for.</p>
-            <p class="lecture__links">
-              <a href="files/lecture1-slides.pdf" data-i18n="genius.slides">Slides</a>
-              <a href="files/lecture1-notes.pdf" data-i18n="genius.notes">Notes</a>
-              <a href="#" data-i18n="genius.video">Video</a>
-            </p>
-          </article>
+        <p data-i18n="genius.intro">Click a coloured square to open the document. An empty square means that document is not available yet.</p>
 
-          <article class="lecture">
-            <p class="lecture__date" data-i18n="genius.l2.date">Lecture 2 · February 2026</p>
-            <h2 class="lecture__title" data-i18n="genius.l2.title">Title of the second lecture</h2>
-            <p class="lecture__desc" data-i18n="genius.l2.desc">A short summary of what this lecture covers and who it is for.</p>
-            <p class="lecture__links">
-              <a href="files/lecture2-slides.pdf" data-i18n="genius.slides">Slides</a>
-              <a href="files/lecture2-notes.pdf" data-i18n="genius.notes">Notes</a>
-              <a href="#" data-i18n="genius.video">Video</a>
-            </p>
-          </article>
-
-          <article class="lecture">
-            <p class="lecture__date" data-i18n="genius.l3.date">Lecture 3 · March 2026</p>
-            <h2 class="lecture__title" data-i18n="genius.l3.title">Title of the third lecture</h2>
-            <p class="lecture__desc" data-i18n="genius.l3.desc">A short summary of what this lecture covers and who it is for.</p>
-            <p class="lecture__links">
-              <a href="files/lecture3-slides.pdf" data-i18n="genius.slides">Slides</a>
-              <a href="files/lecture3-notes.pdf" data-i18n="genius.notes">Notes</a>
-              <a href="#" data-i18n="genius.video">Video</a>
-            </p>
-          </article>
-        </div>
+        <!-- One <li class="chap"> per chapter. The three squares are: course, exercises, solutions.
+             A filled square is an <a href="files/....pdf">; an empty one is <span class="sq sq--empty">.
+             Put the PDFs in public/files/ and add the chapter title (genius.cN) in i18n.js for both languages. -->
+        <ul class="chapters">
+          <li class="chap">
+            <span class="chap__docs"><a class="sq sq--course" href="files/syllabus.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.course" aria-label="Course"></a><span class="sq sq--empty" aria-hidden="true"></span><span class="sq sq--empty" aria-hidden="true"></span></span>
+            <span class="chap__name"><strong data-i18n="genius.syllabus">Syllabus</strong></span>
+          </li>
+          <li class="chap">
+            <span class="chap__docs"><a class="sq sq--course" href="files/cours-1.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.course" aria-label="Course"></a><a class="sq sq--exercises" href="files/exercices-1.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.exercises" aria-label="Exercises"></a><a class="sq sq--solutions" href="files/corriges-1.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.solutions" aria-label="Solutions"></a></span>
+            <span class="chap__name"><strong><span data-i18n="genius.chapter">Chapter</span> 1 – <span class="chap__title" data-i18n="genius.c1">Title of chapter 1</span></strong></span>
+          </li>
+          <li class="chap">
+            <span class="chap__docs"><a class="sq sq--course" href="files/cours-2.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.course" aria-label="Course"></a><a class="sq sq--exercises" href="files/exercices-2.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.exercises" aria-label="Exercises"></a><a class="sq sq--solutions" href="files/corriges-2.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.solutions" aria-label="Solutions"></a></span>
+            <span class="chap__name"><strong><span data-i18n="genius.chapter">Chapter</span> 2 – <span class="chap__title" data-i18n="genius.c2">Title of chapter 2</span></strong></span>
+          </li>
+          <li class="chap">
+            <span class="chap__docs"><a class="sq sq--course" href="files/cours-3.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.course" aria-label="Course"></a><a class="sq sq--exercises" href="files/exercices-3.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.exercises" aria-label="Exercises"></a><a class="sq sq--solutions" href="files/corriges-3.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.solutions" aria-label="Solutions"></a></span>
+            <span class="chap__name"><strong><span data-i18n="genius.chapter">Chapter</span> 3 – <span class="chap__title" data-i18n="genius.c3">Title of chapter 3</span></strong></span>
+          </li>
+          <li class="chap">
+            <span class="chap__docs"><a class="sq sq--course" href="files/cours-4.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.course" aria-label="Course"></a><a class="sq sq--exercises" href="files/exercices-4.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.exercises" aria-label="Exercises"></a><span class="sq sq--empty" aria-hidden="true"></span></span>
+            <span class="chap__name"><strong><span data-i18n="genius.chapter">Chapter</span> 4 – <span class="chap__title" data-i18n="genius.c4">Title of chapter 4</span></strong></span>
+          </li>
+          <li class="chap">
+            <span class="chap__docs"><a class="sq sq--course" href="files/cours-5.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.course" aria-label="Course"></a><a class="sq sq--exercises" href="files/exercices-5.pdf" target="_blank" rel="noopener" data-i18n-aria="genius.exercises" aria-label="Exercises"></a><span class="sq sq--empty" aria-hidden="true"></span></span>
+            <span class="chap__name"><strong><span data-i18n="genius.chapter">Chapter</span> 5 – <span class="chap__title" data-i18n="genius.c5">Title of chapter 5</span></strong></span>
+          </li>
+        </ul>
       </section>
     </main>
   </div>

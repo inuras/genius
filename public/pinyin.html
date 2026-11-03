@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pinyin · Aziz Khalfat</title>
+  <meta name="description" content="Interactive pinyin chart with native audio for every syllable and tone.">
+  <script>
+    // Pick the language before the page is drawn, so French visitors don't see English first.
+    (function () {
+      var l; try { l = localStorage.getItem("site-lang"); } catch (e) {}
+      if (l !== "en" && l !== "fr") l = (navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en";
+      document.documentElement.lang = l;
+      if (l === "fr") {
+        document.documentElement.classList.add("i18n-pending");
+        // Safety net: never keep the page hidden if i18n.js fails to load.
+        setTimeout(function () { document.documentElement.classList.remove("i18n-pending"); }, 1500);
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-title-key="pinyin.doctitle">
+  <header class="masthead">
+    <nav class="masthead__inner">
+      <ul class="nav-links">
+        <li class="nav-home"><a href="index.html">Aziz Khalfat</a></li>
+        <li><a href="genius.html" data-i18n="nav.genius">GENIUS</a></li>
+        <li><a href="pinyin.html" aria-current="page" data-i18n="nav.pinyin">Pinyin</a></li>
+        <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="index.html#teaching" data-i18n="nav.teaching">Teaching</a></li>
+        <li><a href="index.html#resources" data-i18n="nav.resources">Resources</a></li>
+        <li><a href="index.html#cv" data-i18n="nav.cv">CV</a></li>
+      </ul>
+      <div class="masthead__actions">
+        <button class="lang-switch" type="button" aria-label="Passer en français" title="Passer en français">FR</button>
+        <button class="nav-toggle" type="button" aria-label="Menu" data-i18n-aria="nav.menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout layout--wide">
+    <main class="page page--wide">
+      <h1 class="page__title" data-i18n="pinyin.title">Pinyin chart</h1>
+      <p class="pinyin__intro"><span data-i18n="pinyin.intro">Click a syllable to hear it in all four tones, or choose a tone at the top of the chart. The chart itself is in French.</span>
+        <a href="pinyin-chart.html" target="_blank" rel="noopener" data-i18n="pinyin.fullscreen">Open full screen ↗</a></p>
+      <div class="pinyin__frame">
+        <iframe src="pinyin-chart.html" title="Tableau du pinyin" loading="lazy"></iframe>
+      </div>
+    </main>
+  </div>
+
+  <footer class="page__footer">
+    <div class="footer__inner">
+      <p><strong data-i18n="footer.follow">Follow me</strong> · <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> · <a href="mailto:aziz.khalfat@telecom-paris.fr" data-i18n="side.email">Email</a></p>
+      <p class="copyright">© <span id="year"></span> Aziz Khalfat</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

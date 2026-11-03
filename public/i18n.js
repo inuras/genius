@@ -4,6 +4,7 @@
 const TRANSLATIONS = {
   en: {
     "nav.genius": "GENIUS",
+    "nav.pinyin": "Pinyin",
     "nav.projects": "Projects",
     "nav.teaching": "Teaching",
     "nav.resources": "Resources",
@@ -32,22 +33,26 @@ const TRANSLATIONS = {
 
     "genius.doctitle": "GENIUS · Aziz Khalfat",
     "genius.title": "GENIUS",
-    "genius.intro": "My lectures. Each one has its slides, notes, and a video when available.",
-    "genius.slides": "Slides",
-    "genius.notes": "Notes",
-    "genius.video": "Video",
-    "genius.l1.date": "Lecture 1 · January 2026",
-    "genius.l1.title": "Title of the first lecture",
-    "genius.l1.desc": "A short summary of what this lecture covers and who it is for.",
-    "genius.l2.date": "Lecture 2 · February 2026",
-    "genius.l2.title": "Title of the second lecture",
-    "genius.l2.desc": "A short summary of what this lecture covers and who it is for.",
-    "genius.l3.date": "Lecture 3 · March 2026",
-    "genius.l3.title": "Title of the third lecture",
-    "genius.l3.desc": "A short summary of what this lecture covers and who it is for."
+    "genius.intro": "Click a coloured square to open the document. An empty square means that document is not available yet.",
+    "genius.course": "Course",
+    "genius.exercises": "Exercises",
+    "genius.solutions": "Solutions",
+    "genius.syllabus": "Syllabus",
+    "genius.chapter": "Chapter",
+    "genius.c1": "Title of chapter 1",
+    "genius.c2": "Title of chapter 2",
+    "genius.c3": "Title of chapter 3",
+    "genius.c4": "Title of chapter 4",
+    "genius.c5": "Title of chapter 5",
+
+    "pinyin.doctitle": "Pinyin · Aziz Khalfat",
+    "pinyin.title": "Pinyin chart",
+    "pinyin.intro": "Click a syllable to hear it in all four tones, or choose a tone at the top of the chart. The chart itself is in French.",
+    "pinyin.fullscreen": "Open full screen ↗"
   },
   fr: {
     "nav.genius": "GENIUS",
+    "nav.pinyin": "Pinyin",
     "nav.projects": "Projets",
     "nav.teaching": "Enseignement",
     "nav.resources": "Ressources",
@@ -76,19 +81,22 @@ const TRANSLATIONS = {
 
     "genius.doctitle": "GENIUS · Aziz Khalfat",
     "genius.title": "GENIUS",
-    "genius.intro": "Mes cours. Chacun dispose de ses diapositives, de notes et d'une vidéo lorsqu'elle est disponible.",
-    "genius.slides": "Diapositives",
-    "genius.notes": "Notes",
-    "genius.video": "Vidéo",
-    "genius.l1.date": "Cours 1 · janvier 2026",
-    "genius.l1.title": "Titre du premier cours",
-    "genius.l1.desc": "Un court résumé du contenu de ce cours et du public visé.",
-    "genius.l2.date": "Cours 2 · février 2026",
-    "genius.l2.title": "Titre du deuxième cours",
-    "genius.l2.desc": "Un court résumé du contenu de ce cours et du public visé.",
-    "genius.l3.date": "Cours 3 · mars 2026",
-    "genius.l3.title": "Titre du troisième cours",
-    "genius.l3.desc": "Un court résumé du contenu de ce cours et du public visé."
+    "genius.intro": "Cliquez sur un carré coloré pour ouvrir le document. Un carré vide signifie que le document n'est pas encore disponible.",
+    "genius.course": "Cours",
+    "genius.exercises": "Exercices",
+    "genius.solutions": "Corrigés",
+    "genius.syllabus": "Programme",
+    "genius.chapter": "Chapitre",
+    "genius.c1": "Titre du chapitre 1",
+    "genius.c2": "Titre du chapitre 2",
+    "genius.c3": "Titre du chapitre 3",
+    "genius.c4": "Titre du chapitre 4",
+    "genius.c5": "Titre du chapitre 5",
+
+    "pinyin.doctitle": "Pinyin · Aziz Khalfat",
+    "pinyin.title": "Tableau du pinyin",
+    "pinyin.intro": "Cliquez sur une syllabe pour l'entendre aux quatre tons, ou choisissez un ton en haut du tableau.",
+    "pinyin.fullscreen": "Ouvrir en plein écran ↗"
   }
 };
 

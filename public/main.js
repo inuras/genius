@@ -12,8 +12,11 @@ document.querySelectorAll(".nav-links a").forEach(a =>
     navToggle.setAttribute("aria-expanded", "false");
   }));
 
+// Not every page has a sidebar (the Pinyin page doesn't).
 const follow = document.querySelector(".follow-btn");
-follow.addEventListener("click", () => {
-  const open = document.body.classList.toggle("follow-open");
-  follow.setAttribute("aria-expanded", open);
-});
+if (follow) {
+  follow.addEventListener("click", () => {
+    const open = document.body.classList.toggle("follow-open");
+    follow.setAttribute("aria-expanded", open);
+  });
+}

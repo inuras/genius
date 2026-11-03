@@ -343,7 +343,15 @@ const qInput = document.getElementById("q");
 function reveal(key) {
   const b = table.querySelector(`button[data-k="${CSS.escape(key)}"]`);
   if (!b) return;
-  b.scrollIntoView({ block: "center", inline: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  // Scroll only the chart's own scroll area: scrollIntoView would also scroll the page
+  // around the chart when it is embedded in an iframe.
+  const wrap = document.getElementById("wrap");
+  const br = b.getBoundingClientRect(), wr = wrap.getBoundingClientRect();
+  wrap.scrollTo({
+    top: wrap.scrollTop + (br.top - wr.top) - (wrap.clientHeight - br.height) / 2,
+    left: wrap.scrollLeft + (br.left - wr.left) - (wrap.clientWidth - br.width) / 2,
+    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+  });
   b.classList.remove("flash"); void b.offsetWidth; b.classList.add("flash");
 }
 qInput.addEventListener("input", () => {

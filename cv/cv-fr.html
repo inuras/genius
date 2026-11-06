@@ -21,7 +21,7 @@
   .contact { display: flex; flex-wrap: wrap; gap: 2mm 7mm; margin: 0; padding: 0; list-style: none; font-size: 9.5pt; color: #4a535c; }
   .contact li { display: inline-flex; align-items: center; gap: 1.8mm; }
   .contact svg { width: 3.6mm; height: 3.6mm; fill: none; stroke: #476b98; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .contact a { color: inherit; text-decoration: none; }
+  .contact a, .headline a { color: inherit; text-decoration: none; }
   h2 {
     margin: 0 0 5mm; font-size: 10pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #476b98;
   }
@@ -39,7 +39,7 @@
 <body>
   <header>
     <h1>Aziz Khalfat</h1>
-    <p class="headline">Étudiant à Télécom Paris | Institut Polytechnique de Paris</p>
+    <p class="headline">Étudiant à <a href="https://www.telecom-paris.fr">Télécom Paris</a> | Institut Polytechnique de Paris</p>
     <ul class="contact">
       <li><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Palaiseau, Île-de-France, France</li>
       <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:khalfat.aziz@gmail.com">khalfat.aziz@gmail.com</a></li>
@@ -49,7 +49,7 @@
   <section>
     <h2>Formation</h2>
     <ol class="edu">
-      <li><span class="date">2026 – 2029</span><div><span class="school">Télécom Paris</span><span class="place"> · Institut Polytechnique de Paris</span><span class="degree">Diplôme d’ingénieur</span></div></li>
+      <li><span class="date">2026 – 2029</span><div><span class="school"><a href="https://www.telecom-paris.fr">Télécom Paris</a></span><span class="place"> · Institut Polytechnique de Paris</span><span class="degree">Diplôme d’ingénieur</span></div></li>
       <li><span class="date">2025 – 2026</span><div><span class="school">Lycée Pierre Corneille</span><span class="place"> · Rouen</span><span class="degree">Classe préparatoire MP*</span></div></li>
       <li><span class="date">2024 – 2025</span><div><span class="school">Lycée Saint Louis</span><span class="degree">Classe préparatoire MP*</span></div></li>
       <li><span class="date">2023 – 2024</span><div><span class="school">Lycée Saint Louis</span><span class="degree">Classe préparatoire MPSI</span></div></li>

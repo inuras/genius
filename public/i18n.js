@@ -10,7 +10,7 @@ const TRANSLATIONS = {
     "nav.menu": "Menu",
     "lang.switch": "Passer en français",
 
-    "side.bio": "Engineering student at Télécom Paris (Institut Polytechnique de Paris).",
+    "side.bio": "Engineering student at <a href=\"https://www.telecom-paris.fr\" target=\"_blank\" rel=\"noopener\">Télécom Paris</a> (Institut Polytechnique de Paris).",
     "side.follow": "Follow",
     "side.email": "Email",
 
@@ -65,7 +65,7 @@ const TRANSLATIONS = {
     "nav.menu": "Menu",
     "lang.switch": "Switch to English",
 
-    "side.bio": "Élève ingénieur à Télécom Paris (Institut Polytechnique de Paris).",
+    "side.bio": "Élève ingénieur à <a href=\"https://www.telecom-paris.fr\" target=\"_blank\" rel=\"noopener\">Télécom Paris</a> (Institut Polytechnique de Paris).",
     "side.follow": "Suivre",
     "side.email": "E-mail",
 

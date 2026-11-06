@@ -48,13 +48,13 @@
       <!-- Replace with your photo: put it in public/images/ and use <img src="images/me.jpg" alt="Aziz Khalfat"> -->
       <div class="avatar" aria-hidden="true">AK</div>
       <h3 class="author__name">Aziz Khalfat</h3>
-      <p class="author__bio" data-i18n="side.bio">Student at Télécom Paris. Write a short bio here: your field, what you work on, and what you're interested in.</p>
+      <p class="author__bio" data-i18n="side.bio">Engineering student at Télécom Paris (Institut Polytechnique de Paris).</p>
       <button class="follow-btn" type="button" aria-expanded="false" data-i18n="side.follow">Follow</button>
       <ul class="author__urls">
-        <li><span class="icon">📍</span>Paris, France</li>
+        <li><span class="icon">📍</span>Palaiseau, France</li>
         <li><span class="icon">🏛️</span>Télécom Paris</li>
-        <li><a href="mailto:aziz.khalfat@telecom-paris.fr"><span class="icon">✉️</span><span data-i18n="side.email">Email</span></a></li>
-        <li><a href="https://github.com/" target="_blank" rel="noopener"><span class="icon">💻</span>GitHub</a></li>
+        <li><a href="mailto:khalfat.aziz@gmail.com"><span class="icon">✉️</span><span data-i18n="side.email">Email</span></a></li>
+        <li><a href="https://www.linkedin.com/in/aziz-khalfat-705035283/" target="_blank" rel="noopener"><span class="icon">💼</span>LinkedIn</a></li>
       </ul>
     </aside>
 
@@ -71,14 +71,32 @@
         </ul>
 
         <h2 id="cv" data-i18n="home.cv">CV</h2>
-        <p data-i18n-html="home.cvText">Link to your CV: put the PDF in <code>public/files/</code> and link it as <a href="files/cv.pdf">files/cv.pdf</a>.</p>
+        <h3 class="cv__heading" data-i18n="cv.education">Education</h3>
+        <ol class="timeline">
+          <li><span class="tl-date">2026 – 2029</span>
+            <span class="tl-school">Télécom Paris <span class="tl-place">· Institut Polytechnique de Paris</span></span>
+            <span class="tl-desc" data-i18n="cv.e1">Engineering degree (Diplôme d’ingénieur)</span></li>
+          <li><span class="tl-date">2025 – 2026</span>
+            <span class="tl-school">Lycée Pierre Corneille <span class="tl-place">· Rouen</span></span>
+            <span class="tl-desc" data-i18n="cv.mpstar">Preparatory class for the Grandes Écoles, MP*</span></li>
+          <li><span class="tl-date">2024 – 2025</span>
+            <span class="tl-school">Lycée Saint Louis</span>
+            <span class="tl-desc" data-i18n="cv.mpstar">Preparatory class for the Grandes Écoles, MP*</span></li>
+          <li><span class="tl-date">2023 – 2024</span>
+            <span class="tl-school">Lycée Saint Louis</span>
+            <span class="tl-desc" data-i18n="cv.mpsi">Preparatory class for the Grandes Écoles, MPSI</span></li>
+          <li><span class="tl-date" data-i18n="cv.bacDate">Sept. 2020 – June 2023</span>
+            <span class="tl-school">Lycée Blaise Pascal <span class="tl-place">· Rouen</span></span>
+            <span class="tl-desc" data-i18n="cv.bac">French general baccalaureate</span></li>
+        </ol>
+        <p class="cv__links" data-i18n-html="home.cvText">Download my CV (PDF): <a href="files/cv-en.pdf" target="_blank" rel="noopener">English</a> · <a href="files/cv-fr.pdf" target="_blank" rel="noopener">français</a>. Also on <a href="https://www.linkedin.com/in/aziz-khalfat-705035283/" target="_blank" rel="noopener">LinkedIn</a>.</p>
       </section>
     </main>
   </div>
 
   <footer class="page__footer">
     <div class="footer__inner">
-      <p><strong data-i18n="footer.follow">Follow me</strong> · <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> · <a href="mailto:aziz.khalfat@telecom-paris.fr" data-i18n="side.email">Email</a></p>
+      <p><strong data-i18n="footer.follow">Follow me</strong> · <a href="https://www.linkedin.com/in/aziz-khalfat-705035283/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:khalfat.aziz@gmail.com" data-i18n="side.email">Email</a></p>
       <p class="copyright">© <span id="year"></span> Aziz Khalfat</p>
     </div>
   </footer>

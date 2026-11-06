@@ -10,7 +10,7 @@ const TRANSLATIONS = {
     "nav.menu": "Menu",
     "lang.switch": "Passer en français",
 
-    "side.bio": "Student at Télécom Paris. Write a short bio here: your field, what you work on, and what you're interested in.",
+    "side.bio": "Engineering student at Télécom Paris (Institut Polytechnique de Paris).",
     "side.follow": "Follow",
     "side.email": "Email",
 
@@ -23,7 +23,13 @@ const TRANSLATIONS = {
     "home.project1": "<strong>Project one</strong>: one-line description. <a href=\"#\">Link</a>",
     "home.project2": "<strong>Project two</strong>: one-line description. <a href=\"#\">Link</a>",
     "home.cv": "CV",
-    "home.cvText": "Link to your CV: put the PDF in <code>public/files/</code> and link it as <a href=\"files/cv.pdf\">files/cv.pdf</a>.",
+    "home.cvText": "Download my CV (PDF): <a href=\"files/cv-en.pdf\" target=\"_blank\" rel=\"noopener\">English</a> · <a href=\"files/cv-fr.pdf\" target=\"_blank\" rel=\"noopener\">français</a>. Also on <a href=\"https://www.linkedin.com/in/aziz-khalfat-705035283/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>.",
+    "cv.education": "Education",
+    "cv.e1": "Engineering degree (Diplôme d’ingénieur)",
+    "cv.mpstar": "Preparatory class for the Grandes Écoles, MP*",
+    "cv.mpsi": "Preparatory class for the Grandes Écoles, MPSI",
+    "cv.bacDate": "Sept. 2020 – June 2023",
+    "cv.bac": "French general baccalaureate",
 
     "genius.doctitle": "GENIUS · Aziz Khalfat",
     "genius.title": "GENIUS",
@@ -56,7 +62,7 @@ const TRANSLATIONS = {
     "nav.menu": "Menu",
     "lang.switch": "Switch to English",
 
-    "side.bio": "Étudiant à Télécom Paris. Écrivez ici une courte bio : votre domaine, vos travaux et vos centres d'intérêt.",
+    "side.bio": "Élève ingénieur à Télécom Paris (Institut Polytechnique de Paris).",
     "side.follow": "Suivre",
     "side.email": "E-mail",
 
@@ -69,7 +75,13 @@ const TRANSLATIONS = {
     "home.project1": "<strong>Projet un</strong> : description en une ligne. <a href=\"#\">Lien</a>",
     "home.project2": "<strong>Projet deux</strong> : description en une ligne. <a href=\"#\">Lien</a>",
     "home.cv": "CV",
-    "home.cvText": "Lien vers votre CV : placez le PDF dans <code>public/files/</code> et liez-le ainsi : <a href=\"files/cv.pdf\">files/cv.pdf</a>.",
+    "home.cvText": "Télécharger mon CV (PDF) : <a href=\"files/cv-fr.pdf\" target=\"_blank\" rel=\"noopener\">français</a> · <a href=\"files/cv-en.pdf\" target=\"_blank\" rel=\"noopener\">English</a>. Aussi sur <a href=\"https://www.linkedin.com/in/aziz-khalfat-705035283/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>.",
+    "cv.education": "Formation",
+    "cv.e1": "Diplôme d’ingénieur",
+    "cv.mpstar": "Classe préparatoire MP*",
+    "cv.mpsi": "Classe préparatoire MPSI",
+    "cv.bacDate": "sept. 2020 – juin 2023",
+    "cv.bac": "Baccalauréat général",
 
     "genius.doctitle": "GENIUS · Aziz Khalfat",
     "genius.title": "GENIUS",

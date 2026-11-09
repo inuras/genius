@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#24324a">
+  <meta name="apple-mobile-web-app-title" content="GENIUS">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <title>GENIUS · Cours et exercices</title>
+  <meta name="description" content="Cours et exercices de mathématiques d'Aziz Khalfat.">
+  <script>
+    // Pick the language before the page is drawn, so French visitors don't see English first.
+    (function () {
+      var l; try { l = localStorage.getItem("site-lang"); } catch (e) {}
+      if (l !== "en" && l !== "fr") l = (navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en";
+      document.documentElement.lang = l;
+      if (l === "en") {
+        document.documentElement.classList.add("i18n-pending");
+        setTimeout(function () { document.documentElement.classList.remove("i18n-pending"); }, 1500);
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-title-key="lectures.doctitle">
+  <header class="banner">
+    <p class="banner__title"><a href="index.html">GENIUS</a></p>
+    <p class="banner__tagline" data-i18n="site.tagline">Cours et exercices d'Aziz Khalfat</p>
+  </header>
+
+  <nav class="tabs" aria-label="Navigation">
+    <div class="wrap">
+      <a class="tabs__link" href="index.html" aria-current="page" data-i18n="nav.lectures">Cours et exercices</a>
+      <a class="tabs__link" href="ressources.html" data-i18n="nav.resources">Ressources</a>
+      <button class="lang-switch" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <h1 class="entry-title" data-i18n="lectures.heading">Cours et exercices</h1>
+
+    <p class="legend">
+      <span><span class="sq sq--course" aria-hidden="true"></span><strong data-i18n="lectures.course">Cours</strong></span>
+      <span><span class="sq sq--exercises" aria-hidden="true"></span><strong data-i18n="lectures.exercises">Exercices</strong></span>
+      <span><span class="sq sq--solutions" aria-hidden="true"></span><strong data-i18n="lectures.solutions">Corrigés</strong></span>
+    </p>
+
+    <p data-i18n="lectures.intro">Touchez ou cliquez sur un carré coloré pour ouvrir le document. Un carré vide signifie que le document n'est pas encore disponible.</p>
+
+    <!-- One <li class="chap"> per chapter. The three squares are: course, exercises, solutions.
+         A filled square is an <a href="files/....pdf">; an empty one is <span class="sq sq--empty">.
+         Put the PDFs in genius-site/public/files/ and write the chapter title (lectures.cN) in i18n.js, in both languages. -->
+    <ul class="chapters">
+        <li class="chap">
+          <span class="chap__docs"><a class="sq sq--course" href="files/programme.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.course" aria-label="Cours"></a><span class="sq sq--empty" aria-hidden="true"></span><span class="sq sq--empty" aria-hidden="true"></span></span>
+          <span class="chap__name"><strong data-i18n="lectures.syllabus">Programme</strong></span>
+        </li>
+        <li class="chap">
+          <span class="chap__docs"><a class="sq sq--course" href="https://christophebertault.fr/documents/coursetexercices/Cours%20-%20Raisonner,%20rediger.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.course" aria-label="Cours"></a><span class="sq sq--empty" aria-hidden="true"></span><span class="sq sq--empty" aria-hidden="true"></span></span>
+          <span class="chap__name"><strong><span data-i18n="lectures.transversal">Chapitre transversal</span> – <span class="chap__title" data-i18n="lectures.reasoning">Raisonner, rédiger</span></strong> <small class="chap__credit">(C. Bertault)</small></span>
+        </li>
+        <li class="chap">
+          <span class="chap__docs"><a class="sq sq--course" href="files/cours-1.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.course" aria-label="Cours"></a><a class="sq sq--exercises" href="files/exercices-1.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.exercises" aria-label="Exercices"></a><a class="sq sq--solutions" href="files/corriges-1.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.solutions" aria-label="Corrigés"></a></span>
+          <span class="chap__name"><strong><span data-i18n="lectures.chapter">Chapitre</span> 1 – <span class="chap__title" data-i18n="lectures.c1">Titre du chapitre 1</span></strong></span>
+        </li>
+        <li class="chap">
+          <span class="chap__docs"><a class="sq sq--course" href="files/cours-2.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.course" aria-label="Cours"></a><a class="sq sq--exercises" href="files/exercices-2.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.exercises" aria-label="Exercices"></a><a class="sq sq--solutions" href="files/corriges-2.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.solutions" aria-label="Corrigés"></a></span>
+          <span class="chap__name"><strong><span data-i18n="lectures.chapter">Chapitre</span> 2 – <span class="chap__title" data-i18n="lectures.c2">Titre du chapitre 2</span></strong></span>
+        </li>
+        <li class="chap">
+          <span class="chap__docs"><a class="sq sq--course" href="files/cours-3.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.course" aria-label="Cours"></a><a class="sq sq--exercises" href="files/exercices-3.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.exercises" aria-label="Exercices"></a><a class="sq sq--solutions" href="files/corriges-3.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.solutions" aria-label="Corrigés"></a></span>
+          <span class="chap__name"><strong><span data-i18n="lectures.chapter">Chapitre</span> 3 – <span class="chap__title" data-i18n="lectures.c3">Titre du chapitre 3</span></strong></span>
+        </li>
+        <li class="chap">
+          <span class="chap__docs"><a class="sq sq--course" href="files/cours-4.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.course" aria-label="Cours"></a><a class="sq sq--exercises" href="files/exercices-4.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.exercises" aria-label="Exercices"></a><span class="sq sq--empty" aria-hidden="true"></span></span>
+          <span class="chap__name"><strong><span data-i18n="lectures.chapter">Chapitre</span> 4 – <span class="chap__title" data-i18n="lectures.c4">Titre du chapitre 4</span></strong></span>
+        </li>
+        <li class="chap">
+          <span class="chap__docs"><a class="sq sq--course" href="files/cours-5.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.course" aria-label="Cours"></a><a class="sq sq--exercises" href="files/exercices-5.pdf" target="_blank" rel="noopener" data-i18n-aria="lectures.exercises" aria-label="Exercices"></a><span class="sq sq--empty" aria-hidden="true"></span></span>
+          <span class="chap__name"><strong><span data-i18n="lectures.chapter">Chapitre</span> 5 – <span class="chap__title" data-i18n="lectures.c5">Titre du chapitre 5</span></strong></span>
+        </li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><span data-i18n="footer.follow">Suivez-moi</span> · <a href="https://www.linkedin.com/in/aziz-khalfat-705035283/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:khalfat.aziz@gmail.com" data-i18n="footer.email">E-mail</a></p>
+      <p>© <span id="year"></span> Aziz Khalfat</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+</body>
+</html>
